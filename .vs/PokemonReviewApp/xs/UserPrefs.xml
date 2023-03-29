@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{96B3D150-5AE3-4D0D-AE30-7116989C5393}|Default">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.PokemonReviewApp PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="README.md">
+    <Files>
+      <File FileName="Repository/PokemonRepository.cs" Line="21" Column="111" />
+      <File FileName="Interfaces/IPokemonRepository.cs" Line="8" Column="41" />
+      <File FileName="README.md" Line="2" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PokemonReviewApp" expanded="True">
+            <Node name="PokemonReviewApp" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="Interfaces" expanded="True" />
+              <Node name="Repository" expanded="True" />
+              <Node name="design_pokemonreview.png" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>
