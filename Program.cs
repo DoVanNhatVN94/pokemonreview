@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.EntityFrameworkCore;
 using PokemonReviewApp;
 using PokemonReviewApp.Data;
+using PokemonReviewApp.Interfaces;
+using PokemonReviewApp.Repository;
 
 namespace PokemonReviewApp;
 
@@ -26,15 +28,25 @@ public class Program
 //          Singleton: container sẽ trả về cùng một instance của đối tượng cho tất cả các yêu cầu. Đối tượng sẽ được giữ trong bộ nhớ cho đến khi container bị giải phóng.
         builder.Services.AddTransient<Seed>();//Seed class được sử dụng để thực hiện seeding data (khởi tạo dữ liệu ban đầu) cho database của ứng dụng.
 
+        // cần có DI của gói package automapper.extensions.Microsoft.DependencỵInection vì nó chưa định nghĩa được AddAutoMapper
+        builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+        // ===================== REPOSITORY ======================
+        // Add DI của repository vào service
+        builder.Services.AddScoped<IPokemonRepository, PokemonRepository>();
+        builder.Services.AddScoped<ICategoryRepository,CategoryRepository>();
+        builder.Services.AddScoped<ICountryRepository, CountryRepository>();
+        builder.Services.AddScoped<IOwnerRepository,OwnerRepository>();
+        builder.Services.AddScoped<IReviewerRepository, ReviewerRepository>();
+        builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
+
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();// Thêm cấu hình chung gian swagger
 
         //AddDbContext<DataContext> là phương thức đăng ký service, nó được gọi trên đối tượng builder.Services.
         //cấu hình để sử dụng SQL Server với chuỗi kết nối lấy từ file appsettings.json
-        builder.Services.AddDbContext<DataContext>(option =>
-        {
-            option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+        builder.Services.AddDbContext<DataContext>(option =>{                  option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
         });
 
         var app = builder.Build();

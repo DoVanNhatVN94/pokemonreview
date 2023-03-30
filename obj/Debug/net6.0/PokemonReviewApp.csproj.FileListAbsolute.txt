@@ -85,3 +85,5 @@
 /Users/mac/Documents/Project_C-Sharp/PokemonReviewApp/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
 /Users/mac/Documents/Project_C-Sharp/PokemonReviewApp/bin/Debug/net6.0/runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll
 /Users/mac/Documents/Project_C-Sharp/PokemonReviewApp/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll
+/Users/mac/Documents/Project_C-Sharp/PokemonReviewApp/bin/Debug/net6.0/AutoMapper.dll
+/Users/mac/Documents/Project_C-Sharp/PokemonReviewApp/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
